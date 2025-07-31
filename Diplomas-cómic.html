@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diplomas y cómic</title>
+  <link rel="icon" type="image/jpeg" href="yop.png" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎞️ Diplomas y cómic</h1>
+  </header>
+
+  <nav class="nav-panel">
+    <a href="index.html">Inicio</a>
+    <a href="ilustracion.html">Ilustración</a>
+    <a href="fotografia.html">Fotografía</a>
+    <a href="Adobe.html">Adobe</a>
+    <a href="Diplomas-cómic.html" class="activo">Diplomas y cómic</a>
+  </nav>
+
+  <section class="galeria-comics">
+    <h2>🖼️ Galería de Diplomas y Cómics</h2>
+    <p>Explora un poco sobre lo que he aprendido en los años y los certificados que he logrado conseguir.</p>
+    
+    <div class="grid-galeria">
+      <img src="comic/b1.jpeg" alt="Imagen b1" class="zoomable">
+      <img src="comic/b2.jpeg" alt="Imagen b2" class="zoomable">
+      <img src="comic/b3.jpeg" alt="Imagen b3" class="zoomable">
+      <img src="comic/c.jpeg" alt="Imagen c" class="zoomable">
+      <img src="comic/d.jpeg" alt="Imagen d" class="zoomable">
+      <img src="comic/e.jpeg" alt="Imagen e" class="zoomable">
+      <img src="comic/f.jpeg" alt="Imagen f" class="zoomable">
+      
+      <div class="diplomas-centrados">
+        <img src="comic/g.jpeg" alt="Imagen g" class="zoomable">
+        <img src="comic/h.jpeg" alt="Imagen h" class="zoomable">
+        <img src="comic/i.jpeg" alt="Imagen i" class="zoomable">
+      </div>
+    </div>
+  </section>
+
+  <!-- Bloque: Imagenes 1,2,3,4,5 -->
+  <div class="bloque-galeria">
+    <h3>📚 Cuentos cortos (trabajo de FL)</h3>
+    <div class="grid-galeria">
+      <img src="comic/1.jpeg" alt="Imagen 1" class="zoomable">
+      <img src="comic/2.jpeg" alt="Imagen 2" class="zoomable">
+      <img src="comic/3.jpeg" alt="Imagen 3" class="zoomable">
+      <img src="comic/4.jpeg" alt="Imagen 4" class="zoomable">
+      <img src="comic/5.jpeg" alt="Imagen 5" class="zoomable">
+    </div>
+  </div>
+
+  <!-- Bloque: Comic (10 y 10.1) -->
+  <div class="bloque-galeria">
+    <h3>📚 Cómic</h3>
+    <div class="grid-galeria">
+      <img src="comic/10.jpeg" alt="Imagen 10" class="zoomable">
+      <img src="comic/10.1.jpeg" alt="Imagen 10.1" class="zoomable">
+    </div>
+  </div>
+
+  <!-- Bloque: Imagenes 11, 22, 33 -->
+  <div class="bloque-galeria">
+    <h3>📚 Cómic realizado en mi escula</h3>
+    <div class="grid-galeria">
+      <img src="comic/11.jpeg" alt="Imagen 11" class="zoomable">
+      <img src="comic/22.jpeg" alt="Imagen 22" class="zoomable">
+      <img src="comic/33.jpeg" alt="Imagen 33" class="zoomable">
+    </div>
+  </div>
+
+  <!-- Modal para ampliar imagen -->
+  <div id="modal" class="modal">
+    <span class="cerrar">&times;</span>
+    <img class="modal-contenido" id="imgModal">
+  </div>
+
+  <footer>
+    &copy; 2025 Mi Portafolio. Todos los derechos reservados.
+  </footer>
+
+  <!-- Script para ampliar imagen -->
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("imgModal");
+    const cerrar = document.querySelector(".cerrar");
+
+    document.querySelectorAll(".zoomable").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    cerrar.onclick = () => {
+      modal.style.display = "none";
+    };
+
+    window.onclick = (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>
